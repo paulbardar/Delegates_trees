@@ -1,4 +1,5 @@
 <Solution>
   <Project Path="Delegates_first/Delegates_first.csproj" />
   <Project Path="Delegate_second/Delegate_second.csproj" Id="5222129a-a3fc-4e84-8f5b-c6009359d7f8" />
+  <Project Path="NumChecker/NumChecker.csproj" Id="73b4abeb-e69c-4994-a699-920deb9f58d2" />
 </Solution>
