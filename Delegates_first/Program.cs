@@ -11,7 +11,7 @@ namespace Delegates_first
 {
     internal class Program
     {
-        public delegate int MyDelegate(int a, int b);
+        //public delegate int MyDelegate(int a, int b);
 
         public static int Add(int a, int b)
         {
@@ -29,7 +29,14 @@ namespace Delegates_first
         {
             Console.WriteLine("Hello, World!");
 
-            MyDelegate[] dg = new MyDelegate[]
+            //MyDelegate[] dg = new MyDelegate[]
+            //{
+            //    Add,
+            //    Subtract,
+            //    Multiply
+            //};
+
+            Func<int, int, int>[] dg = new Func<int, int, int>[3]
             {
                 Add,
                 Subtract,
@@ -39,9 +46,9 @@ namespace Delegates_first
             int x = 2;
             int y = 6;
 
-            foreach (MyDelegate del in dg)
+            foreach (var del in dg)
             {
-            
+
                 int result = del(x, y);
                 Console.WriteLine($"{del.Method.Name}({x}, {y}) = {result}");
             }
@@ -49,9 +56,9 @@ namespace Delegates_first
             Console.WriteLine("=============================================");
 
 
-            Console.WriteLine(dg[0](2, 6));
-            Console.WriteLine(dg[1](2, 6));
-            Console.WriteLine(dg[2](2, 6));
+            Console.WriteLine($"Додавання: {dg[0](2, 6)}");
+            Console.WriteLine($"Віднімання: {dg[1](2, 6)}");
+            Console.WriteLine($"Множення:  {dg[2](2, 6)}");
 
             
 
